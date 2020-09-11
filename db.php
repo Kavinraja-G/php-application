@@ -1,14 +1,7 @@
 <?php
-	// $fp = file('users.sql', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-	// $query = '';
-	// foreach ($fp as $line) {
-	// 	if ($line != '' && strpos($line, '--') === false) {
-	// 		$query .= $line;
-	// 		if (substr($query, -1) == ';') {
-	// 			mysql_query($query);
-	// 			$query = '';
-	// 		}
-	// 	}
-	// }
+	$script_path = 'users.sql';
+	$command = "mysql --user=root -h localhost -D blog_samples < {$script_path}";
+
+	$output = shell_exec($command . '/shellexec.sql');
 	$conn = mysqli_connect("localhost","root","","blog_samples");
 ?>
